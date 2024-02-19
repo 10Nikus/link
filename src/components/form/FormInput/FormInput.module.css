@@ -1,0 +1,10 @@
+.formInput {
+  height: 48px;
+  width: 100%;
+  border-radius: 8px;
+  border: 3px solid var(--light-grey);
+}
+
+.formInput:focus {
+  border-color: var(--violet);
+}

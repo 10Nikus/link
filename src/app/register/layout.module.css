@@ -1,0 +1,20 @@
+.registerMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.registerDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 709px;
+  width: 476px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+}

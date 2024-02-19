@@ -1,0 +1,20 @@
+.loginMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 573px;
+  width: 476px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+}

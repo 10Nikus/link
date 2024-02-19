@@ -1,0 +1,13 @@
+.formButton {
+  width: 100%;
+  height: 46px;
+  background-color: var(--violet);
+  border-radius: 8px;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  gap: 40px;
+}
+.formButton:hover {
+  background-color: var(--light-violet);
+}
