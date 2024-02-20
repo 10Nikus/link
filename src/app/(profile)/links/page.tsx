@@ -1,3 +1,4 @@
+import Link from "next/link";
 import classes from "./page.module.css";
 
 export default function Links() {
@@ -11,7 +12,9 @@ export default function Links() {
         </p>
       </div>
       <div>
-        <button className={classes.addNewBtn}>Add new link</button>
+        <Link href="/addlinks" className={classes.addNewBtn}>
+          Add new link
+        </Link>
         <div className={classes.emptyDiv}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

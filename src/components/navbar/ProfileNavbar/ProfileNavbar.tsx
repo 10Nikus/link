@@ -15,9 +15,7 @@ export default function ProfileNavbar() {
         <Link
           href="/links"
           className={
-            pathName.includes("/links")
-              ? classes.linkBtnActive
-              : classes.linkBtn
+            pathName.includes("links") ? classes.linkBtnActive : classes.linkBtn
           }
         >
           <svg
@@ -37,7 +35,7 @@ export default function ProfileNavbar() {
         <Link
           href="/details"
           className={
-            pathName.includes("/details")
+            pathName.includes("details")
               ? classes.profileBtnActive
               : classes.profileBtn
           }
@@ -57,7 +55,7 @@ export default function ProfileNavbar() {
           ProfileDetails
         </Link>
       </div>
-      <Link href="./preview" className={classes.previewBtn}>
+      <Link href="/preview/1" className={classes.previewBtn}>
         Preview
       </Link>
     </div>

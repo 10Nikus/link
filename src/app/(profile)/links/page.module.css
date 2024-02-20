@@ -30,12 +30,11 @@
 }
 
 .addNewBtn {
-  width: 100%;
   border: 2px solid var(--violet);
   color: var(--violet);
   background-color: var(--white);
   border-radius: 8px;
-  height: 46px;
+  text-decoration: none;
 }
 
 .addNewBtn:hover {

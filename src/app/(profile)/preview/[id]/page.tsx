@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
+export default function Preview() {
   return (
     <>
       <div>
@@ -9,7 +9,7 @@ export default function Home() {
           <Link href="./share">Share Link</Link>
         </div>
       </div>
-      <h1 className="headingMedium">Your Link will be here</h1>
+      <h1>Your Link will be here</h1>
     </>
   );
 }
