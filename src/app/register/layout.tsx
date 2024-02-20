@@ -15,17 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={instrument.className}>
-        <main className={classes.registerMain}>
-          <div className={classes.registerDiv}>
-            <div className={classes.title}>
-              <h1 className="headingSmall">devlinks</h1>
-            </div>
-            {children}
-          </div>
-        </main>
-      </body>
-    </html>
+    <main className={classes.registerMain}>
+      <div className={classes.registerDiv}>
+        <div className={classes.title}>
+          <h1 className="headingSmall">devlinks</h1>
+        </div>
+        {children}
+      </div>
+    </main>
   );
 }

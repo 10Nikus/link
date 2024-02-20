@@ -1,8 +1,8 @@
 .registerMain {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
 }
 
 .registerDiv {
@@ -17,4 +17,5 @@
 .title {
   text-align: center;
   margin-top: 0;
+  margin-bottom: 51px;
 }

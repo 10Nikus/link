@@ -18,7 +18,7 @@ export default function RegisterPage() {
         <FormInput id="password" placeholder="At least 8 characters">
           Create password
         </FormInput>
-        <FormInput id="password" placeholder="At least 8 characters">
+        <FormInput id="password2" placeholder="At least 8 characters">
           Confirm password
         </FormInput>
         <SubmitButton>Login</SubmitButton>
