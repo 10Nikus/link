@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google";
 import classes from "./layout.module.css";
+import LargeLogo from "@/components/logo/LargeLogo/LargeLogo";
 
-const instrument = Instrument_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,9 +16,7 @@ export default function RootLayout({
   return (
     <main className={classes.loginMain}>
       <div className={classes.loginDiv}>
-        <div className={classes.title}>
-          <h1 className="headingSmall">devlinks</h1>
-        </div>
+        <LargeLogo />
         {children}
       </div>
     </main>

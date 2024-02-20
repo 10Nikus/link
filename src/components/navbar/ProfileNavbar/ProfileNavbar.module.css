@@ -1,0 +1,67 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px;
+  padding: 16px 24px;
+  height: 46px;
+  background: var(--white);
+  border-radius: 12px;
+}
+
+.active {
+  color: var(--violet);
+  background-color: var(--light-violet);
+}
+
+.buttonBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 325px;
+}
+
+.linkBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 122px;
+  height: 46px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.linkBtn:hover {
+  color: var(--violet);
+}
+
+.profileBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 187px;
+  height: 46px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.profileBtn:hover {
+  color: var(--violet);
+}
+
+.previewBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 114px;
+  height: 46px;
+  border-radius: 8px;
+  text-decoration: none;
+  background-color: var(--white);
+  color: var(--violet);
+  border: 2px solid var(--violet);
+}
+
+.previewBtn:hover {
+  background-color: var(--light-violet);
+}
