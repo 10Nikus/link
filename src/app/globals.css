@@ -11,6 +11,8 @@
 }
 body {
   background-color: var(--light-grey);
+  margin: 0;
+  padding: 0;
 }
 
 .headingMedium {
