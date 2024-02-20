@@ -38,6 +38,10 @@
   height: 46px;
 }
 
+.addNewBtn:hover {
+  background-color: var(--light-violet);
+}
+
 .emptyDivContent {
   display: flex;
   flex-direction: column;
