@@ -1,0 +1,19 @@
+.mainDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  padding-top: 0;
+  margin: 0;
+  gap: 24px;
+}
+
+.linksDiv {
+  background-color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 60px;
+}

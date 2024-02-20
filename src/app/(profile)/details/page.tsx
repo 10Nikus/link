@@ -1,5 +1,9 @@
-import ProfileNavbar from "@/components/navbar/ProfileNavbar/ProfileNavbar";
+import classes from "./page.module.css";
 
 export default function Details() {
-  return <ProfileNavbar />;
+  return (
+    <div className={classes.mainDiv}>
+      <h1>Details</h1>
+    </div>
+  );
 }
