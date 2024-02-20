@@ -1,10 +1,24 @@
 .phoneBg {
   background-color: var(--white);
-  width: 349px;
-  height: 569px;
+  width: 237px;
   border-radius: 24px;
   padding: 48px 56px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
