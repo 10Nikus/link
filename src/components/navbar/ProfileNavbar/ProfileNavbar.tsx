@@ -1,13 +1,25 @@
+"use client";
+
 import SmallLogo from "@/components/logo/SmallLogo/SmallLogo";
 import Link from "next/link";
 import classes from "./ProfileNavbar.module.css";
+import { usePathname } from "next/navigation";
 
 export default function ProfileNavbar() {
+  const pathName = usePathname();
+
   return (
     <div className={classes.navBar}>
       <SmallLogo />
       <div className={classes.buttonBar}>
-        <Link href="/profile/links" className={classes.linkBtn}>
+        <Link
+          href="/links"
+          className={
+            pathName.includes("/links")
+              ? classes.linkBtnActive
+              : classes.linkBtn
+          }
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -23,8 +35,12 @@ export default function ProfileNavbar() {
           Links
         </Link>
         <Link
-          href="/profile/details"
-          className={classes.profileBtn + " " + classes.active}
+          href="/details"
+          className={
+            pathName.includes("/details")
+              ? classes.profileBtnActive
+              : classes.profileBtn
+          }
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

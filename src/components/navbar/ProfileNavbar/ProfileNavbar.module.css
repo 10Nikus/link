@@ -35,6 +35,18 @@
   color: var(--violet);
 }
 
+.linkBtnActive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 122px;
+  height: 46px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--violet);
+  background-color: var(--light-violet);
+}
+
 .profileBtn {
   display: flex;
   justify-content: center;
@@ -47,6 +59,18 @@
 
 .profileBtn:hover {
   color: var(--violet);
+}
+
+.profileBtnActive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 187px;
+  height: 46px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--violet);
+  background-color: var(--light-violet);
 }
 
 .previewBtn {
