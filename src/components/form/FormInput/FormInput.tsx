@@ -14,7 +14,7 @@ export default function FormInput({
       <h1 className="bodySmall">{children}</h1>
       <input
         className={classes.formInput}
-        type={id}
+        type={id === "password" || id === "password2" ? "password" : "text"}
         id={id}
         name={id}
         placeholder={placeholder}
