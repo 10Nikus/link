@@ -10,18 +10,3 @@
   gap: 40px;
 }
 
-.inputDiv {
-  display: flex;
-  flex-direction: column;
-  width: full;
-}
-
-.inputDiv input {
-  height: 48px;
-}
-
-.formsDiv {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}

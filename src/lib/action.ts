@@ -14,7 +14,7 @@ export const register = async (prevState: string, formData: any) => {
     dbConnect();
     const user = await User.findOne({ email });
     if (user) {
-      return { error: "User already exists" };
+      return { error: "Email is already used" };
     }
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
@@ -26,19 +26,19 @@ export const register = async (prevState: string, formData: any) => {
   }
 };
 
-export const login = async (formData: any) => {
+export const login = async (prevState: string, formData: any) => {
   const { email, password } = Object.fromEntries(formData);
   try {
-    await signIn("credentials", { email, password });
+    // await signIn("credentials", { email, password });
     const user = await User.findOne({ email });
     if (!user) {
-      return { error: "User not found" };
+      return { error: "Account does not exist" };
     }
     if (user.password !== password) {
       return { error: "Password is incorrect" };
     }
     return { success: true };
   } catch (e: any) {
-    return e.message;
+    return { error: "Account does not exist" };
   }
 };

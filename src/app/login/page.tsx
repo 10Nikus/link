@@ -1,11 +1,6 @@
-"use server";
-
-import SubmitButton from "@/components/button/SubmitButton/SubmitButton";
-import SwapParagraph from "@/components/SwapParagraph/SwapParagraph";
-import FormInput from "@/components/form/FormInput/FormInput";
 import FormHeader from "@/components/form/FormHeader/FormHeader";
 import classes from "./page.module.css";
-import { login } from "@/lib/action";
+import LoginForm from "@/components/form/LoginForm/LoginForm";
 
 export default async function Login() {
   return (
@@ -14,16 +9,7 @@ export default async function Login() {
         bigText="Login"
         smallText="Add your details below to get back into app"
       />
-      <form className={classes.formsDiv} action={login}>
-        <FormInput id="email" placeholder="e.g. alex@email.com">
-          Email address
-        </FormInput>
-        <FormInput id="password" placeholder="Enter your password">
-          Password
-        </FormInput>
-        <SubmitButton>Login</SubmitButton>
-        <SwapParagraph link="/login" />
-      </form>
+      <LoginForm />
     </div>
   );
 }
