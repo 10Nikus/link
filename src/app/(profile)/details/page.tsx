@@ -1,8 +1,14 @@
+"use client";
+
+import { editProfile } from "@/lib/action";
 import classes from "./page.module.css";
+import { useFormState } from "react-dom";
 
 export default function Details() {
+  const [state, formAction] = useFormState(editProfile, undefined);
+
   return (
-    <form className={classes.mainDiv}>
+    <form className={classes.mainDiv} action={formAction}>
       <div className={classes.headerDiv}>
         <h1 className="headingMedium">Profile Details</h1>
         <p className="bodyMedium">
@@ -35,15 +41,29 @@ export default function Details() {
         <div className={classes.inputDiv}>
           <div>
             <p>First Name*</p>
-            <input type="text" placeholder="e.g.John" required />
+            <input
+              name="firstName"
+              type="text"
+              placeholder="e.g.John"
+              required
+            />
           </div>
           <div>
             <p>Last Name*</p>
-            <input type="text" placeholder="e.g.Appleseed" required />
+            <input
+              name="lastName"
+              type="text"
+              placeholder="e.g.Appleseed"
+              required
+            />
           </div>
           <div>
             <p>Email</p>
-            <input type="text" placeholder="e.g.email@example.com" />
+            <input
+              name="email"
+              type="text"
+              placeholder="e.g.email@example.com"
+            />
           </div>
         </div>
       </div>

@@ -42,3 +42,8 @@ export const login = async (prevState: string, formData: any) => {
     return { error: "Account does not exist" };
   }
 };
+
+export const editProfile = async (prevState: string, formData: any) => {
+  const { firstName, lastName, email } = Object.fromEntries(formData);
+  console.log(firstName, lastName, email);
+};
