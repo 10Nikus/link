@@ -45,7 +45,5 @@ export const editProfile = async (prevState: string, formData: any) => {
 };
 
 export const handleLogout = async () => {
-  console.log("logging out");
-
   await signOut();
 };
