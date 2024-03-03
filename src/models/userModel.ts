@@ -6,7 +6,7 @@ const newUserSchema = new Schema({
   firstName: { type: String, default: "" },
   lastName: { type: String, default: "" },
   image: { type: String, default: "" },
-  links: { type: Object, default: {} },
+  links: { type: Array, default: [] },
 });
 
-export const User = models.User2 || model("User2", newUserSchema);
+export const User = models.User3 || model("User3", newUserSchema);

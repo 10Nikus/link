@@ -6,7 +6,14 @@ export const authConfig = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user.id;
+        console.log("user", user);
+        token.id = user._id;
+        token.email = user.email;
+        token.firstName = user.firstName;
+        token.lastName = user.lastName;
+        token.links = user.links;
+        token.name = user.firstName + user.lastName;
+        console.log("token", token);
       }
       return token;
     },

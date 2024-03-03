@@ -2,9 +2,9 @@
 
 import classes from "./page.module.css";
 import Avatar from "@mui/material/Avatar";
-import GithubBtn from "@/components/button/socialbuttons/github/GithubBtn";
 import { useEffect, useState } from "react";
 import { getUserData } from "@/lib/action";
+import Link from "next/link";
 
 export default function Preview({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -32,7 +32,13 @@ export default function Preview({ params }: { params: { id: string } }) {
           </h1>
           <p>{user?.email}</p>
         </div>
-        <div className={classes.linkList}></div>
+        <div className={classes.linkList}>
+          {user?.links.map((link: any, index: number) => (
+            <Link key={index} href={link.link}>
+              {link.type}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
