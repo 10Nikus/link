@@ -13,9 +13,9 @@ export default function LoginForm() {
   const [state, formAction] = useFormState(login, undefined);
   const router = useRouter();
 
-  useEffect(() => {
-    state?.success && router.push(`/preview/x`);
-  }, [state?.success, router]);
+  // useEffect(() => {
+  //   state?.success && router.push(`/preview/x`);
+  // }, [state?.success, router]);
 
   return (
     <form className={classes.formsDiv} action={formAction}>

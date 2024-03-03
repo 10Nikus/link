@@ -3,7 +3,7 @@
 import { User } from "@/models/userModel";
 import dbConnect from "./db";
 import bcrypt from "bcrypt";
-import { signIn } from "./auth";
+import { signIn, signOut } from "./auth";
 
 export const register = async (prevState: string, formData: any) => {
   const { email, password, password2 } = Object.fromEntries(formData);
@@ -42,4 +42,8 @@ export const login = async (prevState: string, formData: any) => {
 export const editProfile = async (prevState: string, formData: any) => {
   const { firstName, lastName, email } = Object.fromEntries(formData);
   console.log(firstName, lastName, email);
+};
+
+export const handleLogout = async () => {
+  await signOut();
 };
