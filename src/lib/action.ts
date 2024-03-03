@@ -67,3 +67,13 @@ export const editProfile = async (prevState: string, formData: any) => {
 export const handleLogout = async () => {
   await signOut();
 };
+
+export const getUserData = async ({ id }: { id: string }) => {
+  try {
+    dbConnect();
+    const user = await User.findById(id);
+    return user;
+  } catch (e: any) {
+    return e.message;
+  }
+};
