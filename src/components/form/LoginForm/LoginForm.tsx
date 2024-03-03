@@ -6,16 +6,9 @@ import SwapParagraph from "@/components/SwapParagraph/SwapParagraph";
 import FormInput from "@/components/form/FormInput/FormInput";
 import classes from "./LoginForm.module.css";
 import { useFormState } from "react-dom";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 export default function LoginForm() {
   const [state, formAction] = useFormState(login, undefined);
-  const router = useRouter();
-
-  // useEffect(() => {
-  //   state?.success && router.push(`/preview/x`);
-  // }, [state?.success, router]);
 
   return (
     <form className={classes.formsDiv} action={formAction}>
@@ -26,8 +19,7 @@ export default function LoginForm() {
         Password
       </FormInput>
       <SubmitButton>Login</SubmitButton>
-      {state?.error && <span>{state.error}</span>}
-      {state?.success && <span>ok</span>}
+      {state?.error && <span className={classes.error}>{state.error}</span>}
       <SwapParagraph link="/login" />
     </form>
   );

@@ -23,7 +23,7 @@ export default async function Home() {
         <Link href="/login">Login</Link>
         <Link href="/register">Register</Link>
         <Link href="/details">Details</Link>
-        <Link href="/preview">Preview</Link>
+        <Link href="/preview/2">Preview</Link>
         <Link href="/addlinks">Add Links</Link>
       </div>
     </>

@@ -20,7 +20,6 @@ const login = async (credentials: any) => {
     }
     return user;
   } catch (e) {
-    console.log(e);
     throw new Error("Error logging in");
   }
 };
@@ -39,7 +38,6 @@ export const {
           const user = await login(credentials);
           return user;
         } catch (e) {
-          console.log(e);
           return null;
         }
       },
@@ -61,7 +59,6 @@ export const {
             await newUser.save();
           }
         } catch (err) {
-          console.log(err);
           return false;
         }
       }
