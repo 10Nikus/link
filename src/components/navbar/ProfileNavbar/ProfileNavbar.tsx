@@ -5,7 +5,7 @@ import Link from "next/link";
 import classes from "./ProfileNavbar.module.css";
 import { usePathname } from "next/navigation";
 
-export default function ProfileNavbar() {
+export default function ProfileNavbar({ id }: { id: string }) {
   const pathName = usePathname();
 
   return (
@@ -55,7 +55,7 @@ export default function ProfileNavbar() {
           ProfileDetails
         </Link>
       </div>
-      <Link href="/preview/1" className={classes.previewBtn}>
+      <Link href={`/preview/${id}`} className={classes.previewBtn}>
         Preview
       </Link>
     </div>

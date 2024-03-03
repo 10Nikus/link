@@ -52,8 +52,6 @@ export const editProfile = async (prevState: string, formData: any) => {
   const { firstName, lastName, email } = Object.fromEntries(formData);
   const session = await auth();
   const id = session?.user?.id;
-  console.log(id, firstName, lastName, email);
-
   try {
     dbConnect();
     await User.findByIdAndUpdate(id, {
