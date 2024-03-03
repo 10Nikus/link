@@ -29,17 +29,13 @@ export const register = async (prevState: string, formData: any) => {
 export const login = async (prevState: string, formData: any) => {
   const { email, password } = Object.fromEntries(formData);
   try {
-    // await signIn("credentials", { email, password });
-    const user = await User.findOne({ email });
-    if (!user) {
-      return { error: "Account does not exist" };
-    }
-    if (user.password !== password) {
-      return { error: "Password is incorrect" };
-    }
+    await signIn("credentials", { email, password });
     return { success: true };
-  } catch (e: any) {
-    return { error: "Account does not exist" };
+  } catch (err: any) {
+    if (err.message.includes("CredentialsSignin")) {
+      return { error: "Invalid username or password" };
+    }
+    throw err;
   }
 };
 

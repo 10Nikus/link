@@ -10,11 +10,11 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function LoginForm() {
-  const router = useRouter();
   const [state, formAction] = useFormState(login, undefined);
+  const router = useRouter();
 
   useEffect(() => {
-    state?.success && router.push(`/preview/${state.success}`);
+    state?.success && router.push(`/preview/x`);
   }, [state?.success, router]);
 
   return (
@@ -27,6 +27,7 @@ export default function LoginForm() {
       </FormInput>
       <SubmitButton>Login</SubmitButton>
       {state?.error && <span>{state.error}</span>}
+      {state?.success && <span>ok</span>}
       <SwapParagraph link="/login" />
     </form>
   );

@@ -38,6 +38,7 @@ export const {
           const user = await login(credentials);
           return user;
         } catch (e) {
+          console.log(e);
           return null;
         }
       },
@@ -49,7 +50,6 @@ export const {
         dbConnect();
         try {
           const user = await User.findOne({ email: profile?.email });
-
           if (!user) {
             const newUser = new User({
               username: profile?.login,
