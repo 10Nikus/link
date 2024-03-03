@@ -2,7 +2,8 @@ import classes from "./page.module.css";
 import Avatar from "@mui/material/Avatar";
 import GithubBtn from "@/components/button/socialbuttons/github/GithubBtn";
 
-export default function Preview() {
+export default function Preview({ params }) {
+  const { id } = params;
   return (
     <div className={classes.mainDiv}>
       <div className={classes.phoneBg}>
