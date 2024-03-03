@@ -22,7 +22,7 @@ export default function RegisterForm() {
       <FormInput id="email" placeholder="e.g. alex@email.com">
         Email address
       </FormInput>
-      {state?.error.type === "email" && (
+      {state?.error?.type === "email" && (
         <span className={classes.error}>{state.error.text}</span>
       )}
 
@@ -33,7 +33,7 @@ export default function RegisterForm() {
       <FormInput id="password2" placeholder="At least 8 characters">
         Confirm password
       </FormInput>
-      {state?.error.type === "password" && (
+      {state?.error?.type === "password" && (
         <span className={classes.error}>{state.error.text}</span>
       )}
       <SubmitButton>Create account</SubmitButton>

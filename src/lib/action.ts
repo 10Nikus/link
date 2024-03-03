@@ -3,17 +3,17 @@
 import { User } from "@/models/userModel";
 import dbConnect from "./db";
 import bcrypt from "bcrypt";
-import { signIn, signOut } from "./auth";
+import { auth, signIn, signOut } from "./auth";
 
 export const register = async (prevState: string, formData: any) => {
   const { email, password, password2 } = Object.fromEntries(formData);
   if (password !== password2) {
     return { error: { text: "Passwords do not match", type: "password" } };
   }
-  if (password.length < 6) {
+  if (password.length < 8) {
     return {
       error: {
-        text: "Password must be at least 6 characters",
+        text: "Password must be at least 8 characters",
         type: "password",
       },
     };
@@ -50,7 +50,20 @@ export const login = async (prevState: string, formData: any) => {
 
 export const editProfile = async (prevState: string, formData: any) => {
   const { firstName, lastName, email } = Object.fromEntries(formData);
-  console.log(firstName, lastName, email);
+  const session = await auth();
+  const id = session?.user?.id;
+  console.log(id, firstName, lastName, email);
+
+  try {
+    dbConnect();
+    await User.findByIdAndUpdate(id, {
+      firstName,
+      lastName,
+      email,
+    });
+  } catch (e: any) {
+    return e.message;
+  }
 };
 
 export const handleLogout = async () => {
