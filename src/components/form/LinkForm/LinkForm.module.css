@@ -1,0 +1,41 @@
+.numAndDel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numAndDel div {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.numAndDel button {
+  background-color: transparent;
+  border: none;
+}
+
+.numAndDel button:hover {
+  text-decoration: underline;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 5px;
+  background-color: var(--lighter-grey);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.editLink {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.editLink div {
+  display: flex;
+  flex-direction: column;
+}

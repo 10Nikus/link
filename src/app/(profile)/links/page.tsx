@@ -1,4 +1,3 @@
-import Link from "next/link";
 import classes from "./page.module.css";
 import { auth } from "@/lib/auth";
 import LinkForm from "@/components/form/LinkForm/LinkForm";
@@ -6,7 +5,6 @@ import LinkForm from "@/components/form/LinkForm/LinkForm";
 export default async function Links() {
   const session = await auth();
   const links = session?.user?.links;
-  console.log(links);
 
   return (
     <div className={classes.mainDiv}>
@@ -17,14 +15,17 @@ export default async function Links() {
           world!
         </p>
       </div>
+      <button className={classes.addNewBtn}>Add new link</button>
       <div>
-        <Link href="/addlinks" className={classes.addNewBtn}>
-          Add new link
-        </Link>
         {links &&
           links.map(
             (element: { link: string; type: string }, index: number) => (
-              <LinkForm key={index} link={element.link} type={element.type} />
+              <LinkForm
+                key={index}
+                link={element.link}
+                type={element.type}
+                num={index}
+              />
             )
           )}
         {!links && (

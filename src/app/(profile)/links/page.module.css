@@ -1,7 +1,6 @@
 .mainDiv {
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 40px;
   width: 808px;
   height: auto;
@@ -35,6 +34,8 @@
   background-color: var(--white);
   border-radius: 8px;
   text-decoration: none;
+  width: 100%;
+  height: 46px;
 }
 
 .addNewBtn:hover {
