@@ -26,8 +26,9 @@ export const authConfig = {
       }
       return session;
     },
-    authorized({ auth, request }) { 
+    authorized({ auth, request }) {
       const user = auth?.user;
+      console.log(user);
       const isOnDetailsPage = request.nextUrl.pathname === "/details";
       const isOnLinksPage = request.nextUrl.pathname === "/links";
       const isOnAddLinkspage = request.nextUrl.pathname === "/addlinks";

@@ -6,6 +6,7 @@ import LinkForm from "@/components/form/LinkForm/LinkForm";
 export default async function Links() {
   const session = await auth();
   const links = session?.user?.links;
+  console.log(links);
 
   return (
     <div className={classes.mainDiv}>

@@ -77,3 +77,14 @@ export const getUserData = async ({ id }: { id: string }) => {
     return e.message;
   }
 };
+
+export const editLinks = async (prevState: string, formData: any) => {
+  const data = Object.fromEntries(formData);
+  console.log(data);
+};
+
+export const deleteLink = async (type: string) => {
+  "use server";
+  const session = await auth();
+  const index = session?.user?.links.findIndex((link) => link.type === type);
+};

@@ -1,5 +1,7 @@
 "use client";
 
+import { deleteLink } from "@/lib/action";
+import { auth } from "@/lib/auth";
 import { useState } from "react";
 
 export default function LinkForm({
@@ -17,18 +19,22 @@ export default function LinkForm({
   return (
     <div>
       <form>
-        <input
-          name="type"
-          type="select"
-          value={state.type}
-          onChange={handleChange}
-        />
+        <input name="type" value={state.type} onChange={handleChange} />
         <input
           name="link"
           type="text"
           value={state.link}
           onChange={handleChange}
         />
+        <button
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            deleteLink(type);
+          }}
+        >
+          Delete
+        </button>
       </form>
     </div>
   );
