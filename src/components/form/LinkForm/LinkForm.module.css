@@ -7,7 +7,7 @@
   display: flex;
   justify-items: center;
   align-items: center;
-  margin-bottom: 12px;
+  gap: 5px;
 }
 
 .numAndDel button {
@@ -22,7 +22,7 @@
 .link {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 24px;
   gap: 5px;
   background-color: var(--lighter-grey);
   border-radius: 12px;
@@ -38,4 +38,20 @@
 .editLink div {
   display: flex;
   flex-direction: column;
+}
+
+.editLink div input,
+.editLink div select {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--white);
+  border: 1px solid var(--light-grey);
+}
+
+.editLink div input:focus {
+  border: 1px solid var(--violet);
+}
+
+.editLink div select:focus {
+  border: 1px solid var(--violet);
 }
