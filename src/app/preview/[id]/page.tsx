@@ -5,6 +5,8 @@ import Avatar from "@mui/material/Avatar";
 import { useEffect, useState } from "react";
 import { getUserData } from "@/lib/action";
 import Link from "next/link";
+import Github from "next-auth/providers/github";
+import GithubBtn from "@/components/button/socialbuttons/github/GithubBtn";
 
 export default function Preview({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -39,6 +41,7 @@ export default function Preview({ params }: { params: { id: string } }) {
             </Link>
           ))}
         </div>
+        <GithubBtn link="https://www.youtube.com/watch?v=fwq9vePfwkI" />
       </div>
     </div>
   );

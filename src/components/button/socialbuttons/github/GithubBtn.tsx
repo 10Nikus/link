@@ -1,9 +1,8 @@
-import Link from "next/link";
-import classes from "./GithubBtn.module.css";
+import SocialBtn from "../socialBtn/SocialBtn";
 
-export default function GithubBtn() {
+export default function GithubBtn({ link }: { link: string }) {
   return (
-    <Link className={classes.btn} href="">
+    <SocialBtn link={link} color="black">
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -26,18 +25,6 @@ export default function GithubBtn() {
         </svg>
         GitHub
       </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="none"
-        viewBox="0 0 16 16"
-      >
-        <path
-          fill="#fff"
-          d="M2.667 7.333v1.334h8L7 12.333l.947.947L13.227 8l-5.28-5.28L7 3.667l3.667 3.666h-8Z"
-        />
-      </svg>
-    </Link>
+    </SocialBtn>
   );
 }
