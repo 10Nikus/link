@@ -3,8 +3,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import classes from "./FormAddModal.module.css";
 
 const style = {
   position: "absolute" as "absolute",
@@ -25,7 +25,9 @@ export default function FormAddModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button className={classes.addNewBtn} onClick={handleOpen}>
+        Open modal
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -33,7 +35,7 @@ export default function FormAddModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <form>
+          <form className={classes.addDiv}>
             <div>
               <label htmlFor="type" className="bodySmall">
                 Type
@@ -62,7 +64,9 @@ export default function FormAddModal() {
               </label>
               <input name="link" type="text" />
             </div>
-            <button type="submit">Submit</button>
+            <button className={classes.addNewBtn} type="submit">
+              Submit
+            </button>
           </form>
         </Box>
       </Modal>

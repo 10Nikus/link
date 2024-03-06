@@ -1,0 +1,36 @@
+.addNewBtn {
+  border: 2px solid var(--violet);
+  color: var(--violet);
+  background-color: var(--white);
+  border-radius: 8px;
+  text-decoration: none;
+  width: 100%;
+  height: 46px;
+}
+
+.addDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.addDiv div {
+  display: flex;
+  flex-direction: column;
+}
+
+.addDiv div input,
+.addDiv div select {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--white);
+  border: 1px solid var(--light-grey);
+}
+
+.addDiv div input:focus {
+  border: 1px solid var(--violet);
+}
+
+.addDiv div select:focus {
+  border: 1px solid var(--violet);
+}
