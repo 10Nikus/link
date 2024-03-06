@@ -5,7 +5,6 @@ import Avatar from "@mui/material/Avatar";
 import { useEffect, useState } from "react";
 import { getUserData } from "@/lib/action";
 import Link from "next/link";
-import Github from "next-auth/providers/github";
 import GithubBtn from "@/components/button/socialbuttons/github/GithubBtn";
 import FrontendMentorBtn from "@/components/button/socialbuttons/frontentMentorBtn/FrontendMentorBtn";
 

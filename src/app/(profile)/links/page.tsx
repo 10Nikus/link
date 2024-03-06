@@ -1,6 +1,7 @@
 import classes from "./page.module.css";
 import { auth } from "@/lib/auth";
 import LinkForm from "@/components/form/LinkForm/LinkForm";
+import FormAddModal from "@/components/form/FormAddModal/FormAddModal";
 
 export default async function Links() {
   const session = await auth();
@@ -15,7 +16,7 @@ export default async function Links() {
           world!
         </p>
       </div>
-      <button className={classes.addNewBtn}>Add new link</button>
+      <FormAddModal />
       <div>
         {links &&
           links.map(
