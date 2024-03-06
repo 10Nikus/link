@@ -1,10 +1,11 @@
 "use client";
 
-import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import classes from "./FormAddModal.module.css";
+import { addLink } from "@/lib/action";
+import { useFormState } from "react-dom";
+import { useEffect, useState } from "react";
 
 const style = {
   position: "absolute" as "absolute",
@@ -19,15 +20,20 @@ const style = {
 };
 
 export default function FormAddModal() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [state, formAction] = useFormState(addLink, undefined);
+
+  useEffect(() => {
+    state?.success && handleClose();
+  }, [state]);
 
   return (
     <div>
-      <Button className={classes.addNewBtn} onClick={handleOpen}>
+      <button className={classes.addNewBtn} onClick={handleOpen}>
         Open modal
-      </Button>
+      </button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -35,7 +41,7 @@ export default function FormAddModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <form className={classes.addDiv}>
+          <form className={classes.addDiv} action={formAction}>
             <div>
               <label htmlFor="type" className="bodySmall">
                 Type

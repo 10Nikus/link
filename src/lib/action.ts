@@ -84,7 +84,27 @@ export const editLinks = async (prevState: string, formData: any) => {
 };
 
 export const deleteLink = async (type: string) => {
-  "use server";
   const session = await auth();
-  const index = session?.user?.links.findIndex((link) => link.type === type);
+  const index = session?.user?.links.findIndex(
+    (link: string) => link.type === type
+  );
+};
+
+export const addLink = async (prevState: string, formData: any) => {
+  const data = Object.fromEntries(formData);
+  const session = await auth();
+  const links = session?.user?.links;
+  const newLinks = [...links, data];
+
+  try {
+    dbConnect();
+    await User.findByIdAndUpdate(session?.user?.id, {
+      links: newLinks,
+    });
+    console.log("success");
+
+    return { success: true };
+  } catch (e: any) {
+    return e.message;
+  }
 };

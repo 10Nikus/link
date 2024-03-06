@@ -28,7 +28,6 @@ export const authConfig = {
     },
     authorized({ auth, request }) {
       const user = auth?.user;
-      console.log(user);
       const isOnDetailsPage = request.nextUrl.pathname === "/details";
       const isOnLinksPage = request.nextUrl.pathname === "/links";
       const isOnAddLinkspage = request.nextUrl.pathname === "/addlinks";
