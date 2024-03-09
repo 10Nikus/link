@@ -2,6 +2,7 @@ import ProfileNavbar from "@/components/navbar/ProfileNavbar/ProfileNavbar";
 import { Metadata } from "next";
 import classes from "./layout.module.css";
 import { auth } from "@/lib/auth";
+import LogoutBtn from "@/components/button/logoutBtn/LogoutBtn";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -49,6 +50,7 @@ export default async function RootLayout({
         </div>
         {children}
       </div>
+      <LogoutBtn />
     </>
   );
 }

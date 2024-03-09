@@ -1,12 +1,11 @@
 "use client";
 
-import { editProfile } from "@/lib/action";
+import { editProfile, handleLogout } from "@/lib/action";
 import classes from "./page.module.css";
 import { useFormState } from "react-dom";
 
 export default function Details() {
   const [state, formAction] = useFormState(editProfile, undefined);
-
   return (
     <form className={classes.mainDiv} action={formAction}>
       <div className={classes.headerDiv}>

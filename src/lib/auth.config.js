@@ -32,6 +32,10 @@ export const authConfig = {
       const isOnLoginPage = request.nextUrl.pathname === "/login";
       const isOnRegisterPage = request.nextUrl.pathname === "/register";
 
+      if (request.nextUrl.pathname === "/") {
+        return Response.redirect(new URL("/links", request.nextUrl));
+      }
+
       if (!user && (isOnDetailsPage || isOnLinksPage || isOnAddLinkspage)) {
         return false;
       }
