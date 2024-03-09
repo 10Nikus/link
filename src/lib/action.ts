@@ -83,8 +83,11 @@ export const editLinks = async (prevState: string, formData: any) => {
   console.log(data);
 };
 
-export const deleteLink = async (type: string) => {
+export const deleteLink = async (prevState: string, formData: any) => {
+  const { type } = Object.fromEntries(formData);
+
   const session = await auth();
+
   const { links } = await getUserData({ id: session?.user?.id });
 
   const newLinks = links.filter(

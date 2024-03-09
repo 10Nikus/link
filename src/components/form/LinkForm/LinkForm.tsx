@@ -1,8 +1,9 @@
 "use client";
 
 import { deleteLink } from "@/lib/action";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classes from "./LinkForm.module.css";
+import { useFormState } from "react-dom";
 
 export default function LinkForm({
   link,
@@ -14,15 +15,21 @@ export default function LinkForm({
   num: number;
 }) {
   const [state, setState] = useState({ link, type });
+  const [state2, formAction] = useFormState(deleteLink, undefined);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
 
+  useEffect(() => {
+    state2?.success && window.location.reload();
+  }, [state2]);
+
   return (
     <div className={classes.link}>
-      <form>
+      <form action={formAction}>
         <div className={classes.numAndDel}>
           <div>
             <svg
@@ -36,14 +43,8 @@ export default function LinkForm({
             </svg>
             <h1 className="headingSmall">link #{num + 1}</h1>
           </div>
-          <button
-            className="bodySmall"
-            type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              deleteLink(type);
-            }}
-          >
+          <input type="hidden" name="type" value={state.type} />
+          <button className="bodySmall" type="submit">
             Delete
           </button>
         </div>

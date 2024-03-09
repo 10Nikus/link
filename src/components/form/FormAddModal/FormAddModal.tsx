@@ -26,7 +26,7 @@ export default function FormAddModal() {
   const [state, formAction] = useFormState(addLink, undefined);
 
   useEffect(() => {
-    state?.success && handleClose();
+    state?.success && window.location.reload();
   }, [state]);
 
   return (
