@@ -15,6 +15,7 @@ export default function Preview({ params }: { params: { id: string } }) {
   useEffect(() => {
     const setUserData = async () => {
       const user = await getUserData({ id });
+
       setUser(user);
     };
     setUserData();
@@ -35,14 +36,41 @@ export default function Preview({ params }: { params: { id: string } }) {
           <p>{user?.email}</p>
         </div>
         <div className={classes.linkList}>
-          {user?.links.map((link: any, index: number) => (
-            <Link key={index} href={link.link}>
-              {link.type}
-            </Link>
-          ))}
+          {user?.links.map((link: any, index: number) => {
+            switch (link.type) {
+              case "frontend Mentor":
+                return <FrontendMentorBtn link={link.link} />;
+              case "github":
+                return <GithubBtn link={link.link} />;
+              case "twitter":
+                return "twitter";
+              case "linkedin":
+                return "linkedin";
+              case "youtube":
+                return "youtube";
+              case "facebook":
+                return "facebook";
+              case "twitch":
+                return "twitch";
+              case "devto":
+                return "devto";
+              case "codewars":
+                return "codewars";
+              case "freeCodeCamp":
+                return "freeCodeCamp";
+              case "codepen":
+                return "codepen";
+              case "gitLab":
+                return "gitLab";
+              case "hashnode":
+                return "hashnode";
+              case "stackoverflow":
+                return "stackoverflow";
+              default:
+                return null;
+            }
+          })}
         </div>
-        <GithubBtn link="https://www.youtube.com/watch?v=fwq9vePfwkI" />
-        <FrontendMentorBtn link="https://www.youtube.com/watch?v=fwq9vePfwkI" />
       </div>
     </div>
   );
