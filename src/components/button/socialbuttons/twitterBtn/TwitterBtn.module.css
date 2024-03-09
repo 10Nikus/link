@@ -3,5 +3,5 @@
   text-decoration: none;
   color: var(--white);
   border-radius: 8px;
-  background-color: #43b7e9;
+  background-color: var(--twitter-blue);
 }

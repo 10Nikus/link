@@ -3,7 +3,7 @@ import classes from "./GithubBtn.module.css";
 export default function GithubBtn({ link }: { link: string }) {
   return (
     <div className={classes.btn}>
-      <SocialBtn link={link} >
+      <SocialBtn link={link}>
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"

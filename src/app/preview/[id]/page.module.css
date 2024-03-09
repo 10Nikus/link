@@ -21,4 +21,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 8px;
+  width: 100%;
 }

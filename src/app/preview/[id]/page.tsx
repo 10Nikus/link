@@ -4,10 +4,13 @@ import classes from "./page.module.css";
 import Avatar from "@mui/material/Avatar";
 import { useEffect, useState } from "react";
 import { getUserData } from "@/lib/action";
-import Link from "next/link";
 import GithubBtn from "@/components/button/socialbuttons/github/GithubBtn";
 import FrontendMentorBtn from "@/components/button/socialbuttons/frontentMentorBtn/FrontendMentorBtn";
 import TwitterBtn from "@/components/button/socialbuttons/twitterBtn/TwitterBtn";
+import LinkedinBtn from "@/components/button/socialbuttons/linkedin/LinkedinBtn";
+import FacebookBtn from "@/components/button/socialbuttons/facebookBtn/FacebookBtn";
+import YoutubeBtn from "@/components/button/socialbuttons/youtubeBtn/youtubeBtn";
+import TwitchBtn from "@/components/button/socialbuttons/twitchBtn/TwitchBtn";
 
 export default function Preview({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -37,7 +40,6 @@ export default function Preview({ params }: { params: { id: string } }) {
           <p>{user?.email}</p>
         </div>
         <div className={classes.linkList}>
-          <FrontendMentorBtn link="aa" />
           {user?.links.map((link: any, index: number) => {
             switch (link.type) {
               case "frontend Mentor":
@@ -47,13 +49,13 @@ export default function Preview({ params }: { params: { id: string } }) {
               case "twitter":
                 return <TwitterBtn key={index} link={link.link} />;
               case "linkedin":
-                return "linkedin";
+                return <LinkedinBtn key={index} link={link.link} />;
               case "youtube":
-                return "youtube";
+                return <YoutubeBtn key={index} link={link.link} />;
               case "facebook":
-                return "facebook";
+                return <FacebookBtn key={index} link={link.link} />;
               case "twitch":
-                return "twitch";
+                return <TwitchBtn key={index} link={link.link} />;
               case "devto":
                 return "devto";
               case "codewars":
