@@ -9,8 +9,15 @@ import FrontendMentorBtn from "@/components/button/socialbuttons/frontentMentorB
 import TwitterBtn from "@/components/button/socialbuttons/twitterBtn/TwitterBtn";
 import LinkedinBtn from "@/components/button/socialbuttons/linkedin/LinkedinBtn";
 import FacebookBtn from "@/components/button/socialbuttons/facebookBtn/FacebookBtn";
-import YoutubeBtn from "@/components/button/socialbuttons/youtubeBtn/youtubeBtn";
 import TwitchBtn from "@/components/button/socialbuttons/twitchBtn/TwitchBtn";
+import YoutubeBtn from "@/components/button/socialbuttons/youtubeBtn/youtubeBtn";
+import DevtoBtn from "@/components/button/socialbuttons/devtoBtn/DevtoBtn";
+import CodewarsBtn from "@/components/button/socialbuttons/codewarsBtn/CodewarsBtn";
+import FreeCodeCampBtn from "@/components/button/socialbuttons/freeCodeCampBtn/FreeCodeCampBtn";
+import CodePenBtn from "@/components/button/socialbuttons/codepenBtn/CodePenBtn";
+import GitLabBtn from "@/components/button/socialbuttons/gitlabBtn/GitLabBtn";
+import HashNodeBtn from "@/components/button/socialbuttons/hashnodeBtn/HashNodeBtn";
+import StackBtn from "@/components/button/socialbuttons/stackBtn/StackBtn";
 
 export default function Preview({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -57,19 +64,19 @@ export default function Preview({ params }: { params: { id: string } }) {
               case "twitch":
                 return <TwitchBtn key={index} link={link.link} />;
               case "devto":
-                return "devto";
+                return <DevtoBtn key={index} link={link.link} />;
               case "codewars":
-                return "codewars";
+                return <CodewarsBtn key={index} link={link.link} />;
               case "freeCodeCamp":
-                return "freeCodeCamp";
+                return <FreeCodeCampBtn key={index} link={link.link} />;
               case "codepen":
-                return "codepen";
+                return <CodePenBtn key={index} link={link.link} />;
               case "gitLab":
-                return "gitLab";
+                return <GitLabBtn key={index} link={link.link} />;
               case "hashnode":
-                return "hashnode";
+                return <HashNodeBtn key={index} link={link.link} />;
               case "stackoverflow":
-                return "stackoverflow";
+                return <StackBtn key={index} link={link.link} />;
               default:
                 return null;
             }
