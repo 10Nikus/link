@@ -22,6 +22,7 @@ import StackBtn from "@/components/button/socialbuttons/stackBtn/StackBtn";
 export default function Preview({ params }: { params: { id: string } }) {
   const { id } = params;
   const [user, setUser] = useState<any>(null);
+  const { links } = getUserData({ id });
 
   useEffect(() => {
     const setUserData = async () => {

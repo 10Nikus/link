@@ -2,10 +2,11 @@ import classes from "./page.module.css";
 import { auth } from "@/lib/auth";
 import LinkForm from "@/components/form/LinkForm/LinkForm";
 import FormAddModal from "@/components/form/FormAddModal/FormAddModal";
+import { getUserData } from "@/lib/action";
 
 export default async function Links() {
   const session = await auth();
-  const links = session?.user?.links;
+  const { links } = await getUserData({ id: session?.user?.id });
 
   return (
     <div className={classes.mainDiv}>

@@ -10,7 +10,6 @@ export const authConfig = {
         token.email = user.email;
         token.firstName = user.firstName;
         token.lastName = user.lastName;
-        token.links = user.links;
         token.name = user.firstName + user.lastName;
       }
       return token;
@@ -22,7 +21,6 @@ export const authConfig = {
         session.user.firstName = token.firstName;
         session.user.lastName = token.lastName;
         session.user.name = token.firstName + token.lastName;
-        session.user.links = token.links;
       }
       return session;
     },

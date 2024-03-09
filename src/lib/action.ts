@@ -85,15 +85,26 @@ export const editLinks = async (prevState: string, formData: any) => {
 
 export const deleteLink = async (type: string) => {
   const session = await auth();
-  const index = session?.user?.links.findIndex(
-    (link: string) => link.type === type
+  const { links } = await getUserData({ id: session?.user?.id });
+
+  const newLinks = links.filter(
+    (link: { type: string; link: string }) => link.type !== type
   );
+  try {
+    dbConnect();
+    await User.findByIdAndUpdate(session?.user?.id, {
+      links: newLinks,
+    });
+    return { success: true };
+  } catch (e: any) {
+    return e.message;
+  }
 };
 
 export const addLink = async (prevState: string, formData: any) => {
   const data = Object.fromEntries(formData);
   const session = await auth();
-  const links = session?.user?.links;
+  const { links } = await getUserData({ id: session?.user?.id });
   const newLinks = [...links, data];
 
   try {
