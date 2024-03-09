@@ -101,7 +101,6 @@ export const addLink = async (prevState: string, formData: any) => {
     await User.findByIdAndUpdate(session?.user?.id, {
       links: newLinks,
     });
-    console.log("success");
 
     return { success: true };
   } catch (e: any) {
