@@ -10,7 +10,7 @@ import TwitterBtn from "@/components/button/socialbuttons/twitterBtn/TwitterBtn"
 import LinkedinBtn from "@/components/button/socialbuttons/linkedin/LinkedinBtn";
 import FacebookBtn from "@/components/button/socialbuttons/facebookBtn/FacebookBtn";
 import TwitchBtn from "@/components/button/socialbuttons/twitchBtn/TwitchBtn";
-import YoutubeBtn from "@/components/button/socialbuttons/youtubeBtn/youtubeBtn";
+import YoutubeBtn from "@/components/button/socialbuttons/youtubeBtn/YoutubeBtn";
 import DevtoBtn from "@/components/button/socialbuttons/devtoBtn/DevtoBtn";
 import CodewarsBtn from "@/components/button/socialbuttons/codewarsBtn/CodewarsBtn";
 import FreeCodeCampBtn from "@/components/button/socialbuttons/freeCodeCampBtn/FreeCodeCampBtn";
@@ -26,7 +26,6 @@ export default function Preview({ params }: { params: { id: string } }) {
   useEffect(() => {
     const setUserData = async () => {
       const user = await getUserData({ id });
-
       setUser(user);
     };
     setUserData();
@@ -36,7 +35,7 @@ export default function Preview({ params }: { params: { id: string } }) {
     <div className={classes.mainDiv}>
       <div className={classes.phoneBg}>
         <Avatar
-          alt="Remy Sharp"
+          alt={`${user?.firstNAme} image`}
           src={user?.image}
           sx={{ width: 104, height: 104 }}
         />
