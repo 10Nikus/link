@@ -18,20 +18,6 @@
   border-radius: 12px;
 }
 
-.shareBtn {
-  background-color: var(--violet);
-  color: var(--white);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  height: 46px;
-  width: 133px;
-}
-
-.shareBtn:hover {
-  background-color: var(--light-violet);
-}
-
 .backBtn {
   display: flex;
   justify-content: center;

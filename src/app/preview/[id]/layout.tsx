@@ -1,6 +1,7 @@
 import Link from "next/link";
 import classes from "./layout.module.css";
 import { Metadata } from "next";
+import ShareBtn from "@/components/button/shareBtn/ShareBtn";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +18,7 @@ export default function Layout({
           <Link className={classes.backBtn} href="../">
             Back to editor
           </Link>
-          <button className={classes.shareBtn}>Share Link</button>
+          <ShareBtn />
         </div>
       </div>
       {children}
