@@ -32,7 +32,7 @@ export default function FormAddModal() {
   return (
     <div>
       <button className={classes.addNewBtn} onClick={handleOpen}>
-        Open modal
+        Add New Link
       </button>
       <Modal
         open={open}
@@ -70,6 +70,9 @@ export default function FormAddModal() {
               </label>
               <input name="link" type="text" />
             </div>
+            {state?.error && (
+              <p className={classes.error}>Link already exist</p>
+            )}
             <button className={classes.addNewBtn} type="submit">
               Submit
             </button>

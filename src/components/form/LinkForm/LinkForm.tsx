@@ -25,7 +25,7 @@ export default function LinkForm({
 
   useEffect(() => {
     state2?.success && window.location.reload();
-  }, [state2]);
+  }, [state2?.success]);
 
   return (
     <div className={classes.link}>

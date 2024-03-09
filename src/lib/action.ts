@@ -85,11 +85,8 @@ export const editLinks = async (prevState: string, formData: any) => {
 
 export const deleteLink = async (prevState: string, formData: any) => {
   const { type } = Object.fromEntries(formData);
-
   const session = await auth();
-
   const { links } = await getUserData({ id: session?.user?.id });
-
   const newLinks = links.filter(
     (link: { type: string; link: string }) => link.type !== type
   );
@@ -108,6 +105,13 @@ export const addLink = async (prevState: string, formData: any) => {
   const data = Object.fromEntries(formData);
   const session = await auth();
   const { links } = await getUserData({ id: session?.user?.id });
+  const linkAlreadyExist =
+    links.filter(
+      (link: { type: string; link: string }) => link.type === data.type
+    ).length > 0;
+  if (linkAlreadyExist) {
+    return { error: true };
+  }
   const newLinks = [...links, data];
 
   try {

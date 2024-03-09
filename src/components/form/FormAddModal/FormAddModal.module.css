@@ -34,3 +34,8 @@
 .addDiv div select:focus {
   border: 1px solid var(--violet);
 }
+
+.error {
+  color: var(--red);
+  margin: 0;
+}
