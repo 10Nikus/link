@@ -1,11 +1,11 @@
 .btn {
   width: 100%;
   text-decoration: none;
-  color: var(--white);
   display: flex;
   justify-content: space-between;
   padding: 16px;
   border-radius: 8px;
+  color: white;
 }
 
 .btn div {

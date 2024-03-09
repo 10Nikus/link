@@ -1,0 +1,13 @@
+.btn {
+  width: 100%;
+  text-decoration: none;
+  color: var(--black);
+  border-radius: 8px;
+  background-color: var(--frontendmentor-white);
+  border: 1px solid var(--frontendmentor-grey);
+}
+.name {
+  color: black;
+  padding: 0;
+  margin: 0;
+}

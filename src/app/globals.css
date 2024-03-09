@@ -8,6 +8,20 @@
   --lighter-grey: #fafafa;
   --white: #ffffff;
   --red: #ff3939;
+  --github-black: #1a1a1a;
+  --frontendmentor-white: #ffffff;
+  --frontendmentor-grey: #d9d9d9;
+  --twitter-blue: #43b7e9;
+  --linkedin-blue: #2d68ff;
+  --youtube-red: #ee3939;
+  --facebook-blue: #2442ac;
+  --twitch-purple: #8a2be2;
+  --devto-black: #333333;
+  --codewars-red: #8a1a50;
+  --freecodecamp-violet: #302267;
+  --gitLab-orange: #eb4925;
+  --hashnode-blue: #0330d1;
+  --stack-orange: #ec7100;
 }
 body {
   background-color: var(--light-grey);

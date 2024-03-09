@@ -7,6 +7,7 @@ import { getUserData } from "@/lib/action";
 import Link from "next/link";
 import GithubBtn from "@/components/button/socialbuttons/github/GithubBtn";
 import FrontendMentorBtn from "@/components/button/socialbuttons/frontentMentorBtn/FrontendMentorBtn";
+import TwitterBtn from "@/components/button/socialbuttons/twitterBtn/TwitterBtn";
 
 export default function Preview({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -36,14 +37,15 @@ export default function Preview({ params }: { params: { id: string } }) {
           <p>{user?.email}</p>
         </div>
         <div className={classes.linkList}>
+          <FrontendMentorBtn link="aa" />
           {user?.links.map((link: any, index: number) => {
             switch (link.type) {
               case "frontend Mentor":
-                return <FrontendMentorBtn link={link.link} />;
+                return <FrontendMentorBtn key={index} link={link.link} />;
               case "github":
-                return <GithubBtn link={link.link} />;
+                return <GithubBtn key={index} link={link.link} />;
               case "twitter":
-                return "twitter";
+                return <TwitterBtn key={index} link={link.link} />;
               case "linkedin":
                 return "linkedin";
               case "youtube":

@@ -3,19 +3,15 @@ import classes from "./SocialBtn.module.css";
 
 export default function SocialBtn({
   link,
-  color,
+
   children,
 }: {
   link: string;
-  color: string;
+
   children: React.ReactNode;
 }) {
   return (
-    <Link
-      className={classes.btn}
-      href={link}
-      style={{ backgroundColor: color }}
-    >
+    <Link className={classes.btn} href={link}>
       {children}
       <svg
         xmlns="http://www.w3.org/2000/svg"
