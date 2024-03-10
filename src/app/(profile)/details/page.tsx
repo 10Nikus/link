@@ -1,11 +1,12 @@
 "use client";
 
-import { editProfile, handleLogout } from "@/lib/action";
+import { editProfile } from "@/lib/action";
 import classes from "./page.module.css";
 import { useFormState } from "react-dom";
 
 export default function Details() {
   const [state, formAction] = useFormState(editProfile, undefined);
+
   return (
     <form className={classes.mainDiv} action={formAction}>
       <div className={classes.headerDiv}>
@@ -17,7 +18,7 @@ export default function Details() {
       <div className={classes.formDiv}>
         <div className={classes.imageDiv}>
           <p className="bodySmall">Profile picture</p>
-          <div className={classes.uploadDiv}>
+          <div className={classes.uploadDiv} style={{}}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
