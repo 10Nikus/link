@@ -19,17 +19,19 @@ export default async function Links() {
       </div>
       <FormAddModal />
       <div>
-        {links &&
-          links.map(
+        {links && < div className={classes.linksDiv}>
+          {links.map(
             (element: { link: string; type: string }, index: number) => (
               <LinkForm
                 key={index}
                 link={element.link}
                 type={element.type}
                 num={index}
-              />
+                />
             )
           )}
+                </div>
+          }
         {!links && (
           <div className={classes.emptyDiv}>
             <svg
