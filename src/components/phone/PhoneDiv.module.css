@@ -1,0 +1,22 @@
+.linksDiv {
+  background-color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 60px;
+}
+.linkList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.x {
+  position: relative;
+  left: 20px;
+  top: 20px;
+}
