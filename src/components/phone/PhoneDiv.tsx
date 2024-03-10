@@ -36,67 +36,78 @@ function PhoneDiv({ user }) {
           stroke="#737373"
           d="M12 55.5C12 30.923 31.923 11 56.5 11h24C86.851 11 92 16.149 92 22.5c0 8.008 6.492 14.5 14.5 14.5h95c8.008 0 14.5-6.492 14.5-14.5 0-6.351 5.149-11.5 11.5-11.5h24c24.577 0 44.5 19.923 44.5 44.5v521c0 24.577-19.923 44.5-44.5 44.5h-195C31.923 621 12 601.077 12 576.5v-521Z"
         />
-        <circle cx="153.5" cy="112" r="48" fill="#EEE" />
-        <rect width="160" height="16" x="73.5" y="185" fill="#EEE" rx="8" />
-        <rect width="72" height="8" x="117.5" y="214" fill="#EEE" rx="4" />
-        <rect width="237" height="44" x="35" y="278" fill="#EEE" rx="8" />
-        <rect width="237" height="44" x="35" y="342" fill="#EEE" rx="8" />
-        <rect width="237" height="44" x="35" y="406" fill="#EEE" rx="8" />
-        <rect width="237" height="44" x="35" y="470" fill="#EEE" rx="8" />
-        <rect width="237" height="44" x="35" y="534" fill="#EEE" rx="8" />
+        {!user && (
+          <>
+            <circle cx="153.5" cy="112" r="48" fill="#EEE" />
+            <rect width="160" height="16" x="73.5" y="185" fill="#EEE" rx="8" />
+            <rect width="72" height="8" x="117.5" y="214" fill="#EEE" rx="4" />
+            <rect width="237" height="44" x="35" y="278" fill="#EEE" rx="8" />
+            <rect width="237" height="44" x="35" y="342" fill="#EEE" rx="8" />
+            <rect width="237" height="44" x="35" y="406" fill="#EEE" rx="8" />
+            <rect width="237" height="44" x="35" y="470" fill="#EEE" rx="8" />
+            <rect width="237" height="44" x="35" y="534" fill="#EEE" rx="8" />
+          </>
+        )}
       </svg>
-      <div
-        style={{
-          position: "absolute",
-          left: "20",
-          width: "240px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Avatar src={user?.image} alt={user?.name} />
-        <h1>
-          {user?.firstName} {user?.lastName}
-        </h1>
-        <p>{user.email}</p>
-        <div className={classes.linkList}>
-          {user?.links.map((link: any, index: number) => {
-            switch (link.type) {
-              case "frontend Mentor":
-                return <FrontendMentorBtn key={index} link={link.link} />;
-              case "github":
-                return <GithubBtn key={index} link={link.link} />;
-              case "twitter":
-                return <TwitterBtn key={index} link={link.link} />;
-              case "linkedin":
-                return <LinkedinBtn key={index} link={link.link} />;
-              case "youtube":
-                return <YoutubeBtn key={index} link={link.link} />;
-              case "facebook":
-                return <FacebookBtn key={index} link={link.link} />;
-              case "twitch":
-                return <TwitchBtn key={index} link={link.link} />;
-              case "devto":
-                return <DevtoBtn key={index} link={link.link} />;
-              case "codewars":
-                return <CodewarsBtn key={index} link={link.link} />;
-              case "freeCodeCamp":
-                return <FreeCodeCampBtn key={index} link={link.link} />;
-              case "codepen":
-                return <CodePenBtn key={index} link={link.link} />;
-              case "gitLab":
-                return <GitLabBtn key={index} link={link.link} />;
-              case "hashnode":
-                return <HashNodeBtn key={index} link={link.link} />;
-              case "stackoverflow":
-                return <StackBtn key={index} link={link.link} />;
-              default:
-                return null;
-            }
-          })}
+      {user && (
+        <div
+          style={{
+            position: "absolute",
+            left: "20",
+            width: "240px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            paddingTop: "40px",
+          }}
+        >
+          <Avatar
+            sx={{ width: "100px", height: "100px" }}
+            src={user?.image}
+            alt={user?.name}
+          />
+          <h1>
+            {user?.firstName} {user?.lastName}
+          </h1>
+          <p>{user.email}</p>
+          <div className={classes.linkList}>
+            {user?.links.map((link: any, index: number) => {
+              switch (link.type) {
+                case "frontend Mentor":
+                  return <FrontendMentorBtn key={index} link={link.link} />;
+                case "github":
+                  return <GithubBtn key={index} link={link.link} />;
+                case "twitter":
+                  return <TwitterBtn key={index} link={link.link} />;
+                case "linkedin":
+                  return <LinkedinBtn key={index} link={link.link} />;
+                case "youtube":
+                  return <YoutubeBtn key={index} link={link.link} />;
+                case "facebook":
+                  return <FacebookBtn key={index} link={link.link} />;
+                case "twitch":
+                  return <TwitchBtn key={index} link={link.link} />;
+                case "devto":
+                  return <DevtoBtn key={index} link={link.link} />;
+                case "codewars":
+                  return <CodewarsBtn key={index} link={link.link} />;
+                case "freeCodeCamp":
+                  return <FreeCodeCampBtn key={index} link={link.link} />;
+                case "codepen":
+                  return <CodePenBtn key={index} link={link.link} />;
+                case "gitLab":
+                  return <GitLabBtn key={index} link={link.link} />;
+                case "hashnode":
+                  return <HashNodeBtn key={index} link={link.link} />;
+                case "stackoverflow":
+                  return <StackBtn key={index} link={link.link} />;
+                default:
+                  return null;
+              }
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
