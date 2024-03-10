@@ -15,8 +15,9 @@ import CodePenBtn from "@/components/button/socialbuttons/codepenBtn/CodePenBtn"
 import GitLabBtn from "@/components/button/socialbuttons/gitlabBtn/GitLabBtn";
 import HashNodeBtn from "@/components/button/socialbuttons/hashnodeBtn/HashNodeBtn";
 import StackBtn from "@/components/button/socialbuttons/stackBtn/StackBtn";
+import { relative } from "path";
 
-function PhoneDiv({ user }: { user: any }) {
+function PhoneDiv({ user }) {
   return (
     <div className={classes.linksDiv}>
       <svg
@@ -44,7 +45,16 @@ function PhoneDiv({ user }: { user: any }) {
         <rect width="237" height="44" x="35" y="470" fill="#EEE" rx="8" />
         <rect width="237" height="44" x="35" y="534" fill="#EEE" rx="8" />
       </svg>
-      <div className={classes.x}>
+      <div
+        style={{
+          position: "absolute",
+          left: "20",
+          width: "240px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <Avatar src={user?.image} alt={user?.name} />
         <h1>
           {user?.firstName} {user?.lastName}

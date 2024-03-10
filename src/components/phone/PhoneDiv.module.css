@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 50px 60px;
+  position: relative;
 }
 .linkList {
   display: flex;
@@ -15,8 +16,3 @@
   width: 100%;
 }
 
-.x {
-  position: relative;
-  left: 20px;
-  top: 20px;
-}
