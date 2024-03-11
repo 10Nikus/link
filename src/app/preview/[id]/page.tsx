@@ -45,41 +45,43 @@ export default function Preview({ params }: { params: { id: string } }) {
           </h1>
           <p>{user?.email}</p>
         </div>
-        <div className={classes.linkList}>
-          {user?.links.map((link: any, index: number) => {
-            switch (link.type) {
-              case "frontend Mentor":
-                return <FrontendMentorBtn key={index} link={link.link} />;
-              case "github":
-                return <GithubBtn key={index} link={link.link} />;
-              case "twitter":
-                return <TwitterBtn key={index} link={link.link} />;
-              case "linkedin":
-                return <LinkedinBtn key={index} link={link.link} />;
-              case "youtube":
-                return <YoutubeBtn key={index} link={link.link} />;
-              case "facebook":
-                return <FacebookBtn key={index} link={link.link} />;
-              case "twitch":
-                return <TwitchBtn key={index} link={link.link} />;
-              case "devto":
-                return <DevtoBtn key={index} link={link.link} />;
-              case "codewars":
-                return <CodewarsBtn key={index} link={link.link} />;
-              case "freeCodeCamp":
-                return <FreeCodeCampBtn key={index} link={link.link} />;
-              case "codepen":
-                return <CodePenBtn key={index} link={link.link} />;
-              case "gitLab":
-                return <GitLabBtn key={index} link={link.link} />;
-              case "hashnode":
-                return <HashNodeBtn key={index} link={link.link} />;
-              case "stackoverflow":
-                return <StackBtn key={index} link={link.link} />;
-              default:
-                return null;
-            }
-          })}
+        <div className={classes.linkListDiv}>
+          <div className={classes.linkListContent}>
+            {user?.links.map((link: any, index: number) => {
+              switch (link.type) {
+                case "frontend Mentor":
+                  return <FrontendMentorBtn key={index} link={link.link} />;
+                case "github":
+                  return <GithubBtn key={index} link={link.link} />;
+                case "twitter":
+                  return <TwitterBtn key={index} link={link.link} />;
+                case "linkedin":
+                  return <LinkedinBtn key={index} link={link.link} />;
+                case "youtube":
+                  return <YoutubeBtn key={index} link={link.link} />;
+                case "facebook":
+                  return <FacebookBtn key={index} link={link.link} />;
+                case "twitch":
+                  return <TwitchBtn key={index} link={link.link} />;
+                case "devto":
+                  return <DevtoBtn key={index} link={link.link} />;
+                case "codewars":
+                  return <CodewarsBtn key={index} link={link.link} />;
+                case "freeCodeCamp":
+                  return <FreeCodeCampBtn key={index} link={link.link} />;
+                case "codepen":
+                  return <CodePenBtn key={index} link={link.link} />;
+                case "gitLab":
+                  return <GitLabBtn key={index} link={link.link} />;
+                case "hashnode":
+                  return <HashNodeBtn key={index} link={link.link} />;
+                case "stackoverflow":
+                  return <StackBtn key={index} link={link.link} />;
+                default:
+                  return null;
+              }
+            })}
+          </div>
         </div>
       </div>
     </div>
